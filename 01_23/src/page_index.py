@@ -16,3 +16,5 @@ def get():
         filename=f"html/index.html")
     q = random.choice(names.name)
     return t.render(name=q)
+    #return t.render(isLoggedIn=random.choice([True,False]))
+        
