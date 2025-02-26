@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Signup Page</title>
+
+<style>
+
+.titlebar {
+    background: lightblue;
+    border: 5px solid black;
+    width: 400px;
+    position: absolute;
+    left: 35%;
+    top: 20%;
+
+    box-shadow: 1em 1em 0.5em rgba(0,0,0,0.5);
+
+}
+
+</style>
+</head>
+<body>
+<script src="/html/test.js"></script>
+<div class = 'titlebar'>
+    Email:
+    <dd><p><input id="email" size=10></p></dd>
+    <p id="email_message"></p>
+    <br>Password:
+    <dd><p><input id="password" size=10></p></dd>
+    <p id="password_message"></p>
+    <br>Name:
+    <dd><p><input id="name" size=10></p></dd>
+    <p id="name_message"></p>
+    <br>Date of Birth:
+    <dd><p><input id="DOB" type="date" size=10></p></dd>
+    <p id="DOB_message"></p>
+    <div><button onclick="signup()">Signup</button></div>  
+    <script>
+        function signup(){
+            let name_input = document.getElementById("name").value;
+            let name_message = document.getElementById("name_message");
+            if(name_input.trim() ==="")
+            {
+                name_message.textContent = "Input is empty";
+            }
+            else 
+            {
+                name_message.textContent = "";
+            }
+
+            let email_input = document.getElementById("email").value;
+            let email_message = document.getElementById("email_message");
+            if(email_input.trim() ==="")
+            {
+                email_message.textContent = "Input is empty";
+            }
+            else 
+            {
+                email_message.textContent = "";
+            }
+            if (!email_input.includes("@")) 
+            { 
+                email_message.textContent = "Error: Invalid email (must contain '@')";
+                return;
+            } 
+            if (!email_input.includes("gmail.com")) 
+            { 
+                email_message.textContent = "Error: Invalid email (must contain 'gmail.com')";
+                return;
+            } 
+
+            let password_input = document.getElementById("password").value;
+            let password_message = document.getElementById("password_message");
+            if(password_input.trim() ==="")
+            {
+                password_message.textContent = "Input is empty";
+            }
+            else{
+                password_message.textContent = "";
+            }
+
+            let DOB_input = document.getElementById("DOB").value;
+            let DOB_message = document.getElementById("DOB_message"); 
+            let dob = new Date(DOB_input);
+            let today = new Date();
+            let birthYear = dob.getFullYear();
+
+            if (DOB_input.trim() === "") 
+            {
+                DOB_message.textContent = "Input is empty";
+               return;
+            }
+
+            if (dob >= today) 
+            {
+                DOB_message.textContent = "Date of birth cannot be in the future!";
+                return;
+            }
+
+            if (birthYear > 2013) 
+            {  
+                DOB_message.textContent = "Error: Too young"; 
+            } else {
+                DOB_message.textContent = "Age is acceptable!"; 
+            }
+            
+            
+        }
+        </script>
+
+
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/html/site.css">
+<title>FOO</title>
+</head>
+<body>
+<div class="header">
+    % if isLoggedIn:
+    <a href="/logout">Log out</a>
+% else:
+    <a href="/login">Log in</a> <a href="/signup">Sign up</a>
+% endif
+    <img src="/html/logo.png">
+</div>
+<div>
+    Today is: ${today}
+</div>
+</body>
+</html>
