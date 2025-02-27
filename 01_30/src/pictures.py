@@ -1,0 +1,2 @@
+pics = ["/html/hihi.png", "/html/sad.png", "/html/accepting.png", "/html/angry.png", "/html/cool.png", "/html/helloing.png", 
+        "/html/meh.png", "/html/reallyangry.png", "/html/what.png", "/html/yippee.png",]
